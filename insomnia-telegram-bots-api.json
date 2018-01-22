@@ -1,0 +1,215 @@
+{
+	"_type": "export",
+	"__export_format": 3,
+	"__export_date": "2018-01-22T10:55:45.019Z",
+	"__export_source": "insomnia.desktop.app:v5.12.4",
+	"resources": [
+		{
+			"_id": "wrk_563baf7126b94eea8b8b672cfb295e79",
+			"created": 1516614217134,
+			"description": "",
+			"modified": 1516618525620,
+			"name": "Telegram Bots API",
+			"parentId": null,
+			"_type": "workspace"
+		},
+		{
+			"_id": "env_f8c6ddc258144636821938b581b77532",
+			"color": null,
+			"created": 1516614217434,
+			"data": {
+				"base_url": "https://api.telegram.org/bot",
+				"token": ""
+			},
+			"isPrivate": false,
+			"modified": 1516618224824,
+			"name": "New Environment",
+			"parentId": "wrk_563baf7126b94eea8b8b672cfb295e79",
+			"_type": "environment"
+		},
+		{
+			"_id": "jar_318d53f04b064da381c020c0c897ac0a",
+			"cookies": [],
+			"created": 1516614217446,
+			"modified": 1516614217446,
+			"name": "Default Jar",
+			"parentId": "wrk_563baf7126b94eea8b8b672cfb295e79",
+			"_type": "cookie_jar"
+		},
+		{
+			"_id": "fld_0167173405a840deba1085d5cbd8aa33",
+			"created": 1516617851208,
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1515546371910.875,
+			"modified": 1516617856843,
+			"name": "Webhook",
+			"parentId": "wrk_563baf7126b94eea8b8b672cfb295e79",
+			"_type": "request_group"
+		},
+		{
+			"_id": "req_b9df11b15ba643c5b6ccabc3654c6871",
+			"authentication": {},
+			"body": {},
+			"created": 1516615775309,
+			"description": "",
+			"headers": [],
+			"metaSortKey": -1516615775309,
+			"method": "GET",
+			"modified": 1516616511207,
+			"name": "getMe",
+			"parameters": [],
+			"parentId": "wrk_563baf7126b94eea8b8b672cfb295e79",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ base_url  }}/getMe",
+			"_type": "request"
+		},
+		{
+			"_id": "req_d6e06ba3584c4c82a111d4c3a37d5318",
+			"authentication": {},
+			"body": {},
+			"created": 1516616058051,
+			"description": "",
+			"headers": [],
+			"metaSortKey": -1515760252590.5,
+			"method": "GET",
+			"modified": 1516616310449,
+			"name": "getUpdates",
+			"parameters": [
+				{
+					"disabled": true,
+					"id": "pair_7eff896703294425bba77198b636f07f",
+					"name": "offset",
+					"value": ""
+				},
+				{
+					"disabled": true,
+					"id": "pair_91eb1c8b64b14887b5dd5001e43aa4f8",
+					"name": "limit",
+					"value": ""
+				},
+				{
+					"disabled": true,
+					"id": "pair_6d0624158d574263b029d1ad4f79167d",
+					"name": "timeout",
+					"value": ""
+				},
+				{
+					"disabled": true,
+					"id": "pair_46927dd2264d4de599fac2bd7c11964a",
+					"name": "allowed_updates",
+					"value": ""
+				}
+			],
+			"parentId": "wrk_563baf7126b94eea8b8b672cfb295e79",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ base_url  }}/getUpdates",
+			"_type": "request"
+		},
+		{
+			"_id": "env_cc12d734f3e94a4cbc1334574146f389",
+			"color": null,
+			"created": 1516616701200,
+			"data": {
+				"base_url": "{{ base_url  }}{{ token  }}",
+				"token": "token"
+			},
+			"isPrivate": false,
+			"modified": 1516616727342,
+			"name": "Common",
+			"parentId": "env_f8c6ddc258144636821938b581b77532",
+			"_type": "environment"
+		},
+		{
+			"_id": "req_eaf36b5ed0ad4b1ebc6924a82d929b82",
+			"authentication": {},
+			"body": {},
+			"created": 1516616327589,
+			"description": "",
+			"headers": [],
+			"metaSortKey": -1515439431571.0625,
+			"method": "GET",
+			"modified": 1516617953838,
+			"name": "setWebhook",
+			"parameters": [
+				{
+					"disabled": false,
+					"id": "pair_7eff896703294425bba77198b636f07f",
+					"name": "url",
+					"value": "https://22361e9d.ngrok.io"
+				},
+				{
+					"disabled": true,
+					"id": "pair_91eb1c8b64b14887b5dd5001e43aa4f8",
+					"name": "certificate",
+					"value": ""
+				},
+				{
+					"disabled": true,
+					"id": "pair_6d0624158d574263b029d1ad4f79167d",
+					"name": "max_connections",
+					"value": ""
+				},
+				{
+					"disabled": true,
+					"id": "pair_46927dd2264d4de599fac2bd7c11964a",
+					"name": "allowed_updates",
+					"value": ""
+				}
+			],
+			"parentId": "fld_0167173405a840deba1085d5cbd8aa33",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ base_url  }}/setWebhook",
+			"_type": "request"
+		},
+		{
+			"_id": "req_d378173bbda84784ab812a3f771d60ed",
+			"authentication": {},
+			"body": {},
+			"created": 1516617865536,
+			"description": "",
+			"headers": [],
+			"metaSortKey": -1515172080721.5312,
+			"method": "GET",
+			"modified": 1516617884126,
+			"name": "deleteWebhook",
+			"parameters": [],
+			"parentId": "fld_0167173405a840deba1085d5cbd8aa33",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ base_url  }}/deleteWebhook",
+			"_type": "request"
+		},
+		{
+			"_id": "req_68d293de809f4e13850fa8fc61c3d741",
+			"authentication": {},
+			"body": {},
+			"created": 1516617894943,
+			"description": "",
+			"headers": [],
+			"metaSortKey": -1515038405296.7656,
+			"method": "GET",
+			"modified": 1516618236190,
+			"name": "getWebhookInfo",
+			"parameters": [],
+			"parentId": "fld_0167173405a840deba1085d5cbd8aa33",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ base_url  }}/getWebhookInfo",
+			"_type": "request"
+		}
+	]
+}
